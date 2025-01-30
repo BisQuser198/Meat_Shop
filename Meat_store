@@ -1,0 +1,40 @@
+{
+    "products": [
+        {
+            "product": {
+                "_name_of_product": "Pateu",
+                "_category_of_product": "meat_products",
+                "_date_of_manufacture": "2010-10-10",
+                "_expiration_date": "2015-10-10",
+                "_id": "7c6cd9c3-d21d-4eb4-99ab-adf0ff80d995",
+                "_price": 15.0,
+                "_discount": 0.0
+            },
+            "quantity": 1
+        },
+        {
+            "product": {
+                "_name_of_product": "Fleica",
+                "_category_of_product": "meat_fresh",
+                "_date_of_manufacture": "2025-01-25",
+                "_expiration_date": "2025-01-30",
+                "_id": "48778776-0f59-4cc7-8e2e-23fabfed8291",
+                "_price": 40.0,
+                "_discount": 0.0
+            },
+            "quantity": 1
+        },
+        {
+            "product": {
+                "_name_of_product": "Caltabos",
+                "_category_of_product": "meat_products",
+                "_date_of_manufacture": "2024-10-10",
+                "_expiration_date": "2024-11-11",
+                "_id": "698ce6a9-76e9-4a5f-a919-6178cbec5dcd",
+                "_price": 40.0,
+                "_discount": 0.0
+            },
+            "quantity": 1
+        }
+    ]
+}
