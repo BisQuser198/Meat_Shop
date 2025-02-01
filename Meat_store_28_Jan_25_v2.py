@@ -484,15 +484,14 @@
 #     main()
 
 ##---------------
-# This further version fixes following bug:
+# Version 2 fixes follow  bug:
 # The script is updated so that when a Stock object is imported, the Product objects within it maintain their initial unique IDs. 
 # At the same time, new Product objects will receive unique IDs when created.
 # Added an _id parameter to the __init__ method with a default value of None.
 # When _id is None, a new unique ID is generated. Otherwise, the imported '_id' is used
 
-# Updated point 4 like in version 1 to apply a 10% discount
+# Updated user terminal section 4 too apply a 10% discount
 
-#
 
 import json
 import uuid
