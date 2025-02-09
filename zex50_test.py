@@ -10,11 +10,12 @@
 # import Meat_store_flask
 # # Meat_store_flask.hello() # called & used function -- WORKED
 
-# B)
+# B) solved h2 import module from different direct via sys module
 import sys
 sys.path.insert(1, 'C:/Users/I5/Desktop/python_work/Meat_shop')
 #import ex50 # instead of import ex50 I just copied it here to get it to work
 
+# Rather than importing ex50, I simply copied it in
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
@@ -22,7 +23,7 @@ app = Flask(__name__)
 def index():
     greeting = "Hello World"
 
-    if request.method == "POST":
+    if request.method == "POST": 
         name = request.form['name']
         greet = request.form['greet']
         greeting = f"{greet}, {name}"
@@ -37,16 +38,21 @@ app.config['TESTING'] = True
 web = app.test_client()
 
 def test_index():
-    rv = web.get('/', follow_redirects=True)
-    assert rv.status_code == 404
+    rv = web.get('/', follow_redirects=True) # https://www.w3schools.com/PYTHON/ref_requests_get.asp
+# get() method sends a GET request to the specified url
+# SYNTAX: x = requests.get('url', params={key: value}, args) 
+    assert rv.status_code == 404 # returns 404 since page doesn't exist
 
     rv = web.get('/hello', follow_redirects=True)
     assert rv.status_code == 200
     assert b"Fill Out This Form" in rv.data
+# 'b' character b4 a string specifies string as "byte string" <=> python interprets as sequence of bytes rather than characters
+# bytes literals are used to represent binary data like encoded text, pictures, audio, other data
 
     data = {'name': 'Zed', 'greet': 'Hola'}
-    rv = web.post('/hello', follow_redirects=True, data=data)
-    assert b"Zed" in rv.data
+    rv = web.post('/hello', follow_redirects=True, data=data) # using post() M., send a POST request
+# then give post() the data in the form as a dict ; data = {'name': 'Zed', 'greet': 'Hola'}
+    assert b"Zed" in rv.data 
     assert b"Hola" in rv.data
 
 if __name__ == "__main__":
