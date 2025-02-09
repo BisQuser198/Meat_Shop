@@ -44,7 +44,7 @@ def test_index():
     assert rv.status_code == 404 # returns 404 since page doesn't exist
 
     rv = web.get('/hello', follow_redirects=True)
-    assert rv.status_code == 200
+    assert rv.status_code == 200 # check /hello works with both a GET & POST form
     assert b"Fill Out This Form" in rv.data
 # 'b' character b4 a string specifies string as "byte string" <=> python interprets as sequence of bytes rather than characters
 # bytes literals are used to represent binary data like encoded text, pictures, audio, other data
